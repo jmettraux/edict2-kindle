@@ -15,20 +15,15 @@ puts %{
       <mbp:pagebreak/>
 }
 
-R = /^([^;\s]+)(?:;([^:\s]+))* \[([^;\s]+)(?:;([^:\s]+))*\] \/(.+)\/$/
+R = /^([^;\s]+)(?:;([^:\s]+))* (?:\[([^;\s]+)(?:;([^:\s]+))*\] )?\/(.+)\/$/
 ENTL = /^EntL\d+X?$/
 
 def to_entry(line)
 
   m = R.match(line)
 
-  unless m
-    STDERR.puts "failed to parse >#{line}<"
-    return
-  end
-
   kis = [ m[1], *(m[2] ? m[2].split(';') : []) ]
-  kas = [ m[3], *(m[4] ? m[4].split(';') : []) ]
+  kas = [ m[3], *(m[4] ? m[4].split(';') : []) ].compact
   gls = m[5].split('/').reject { |g| ENTL.match(g) }
 
   label = kis.join(';')
@@ -36,9 +31,7 @@ def to_entry(line)
 
   puts "<idx:entry name=\"word\" scriptable=\"yes\">"
 
-  puts "  <h2>"
-  puts label
-  puts "  </h2>"
+  puts "  <h2>#{label}</h2>"
 
   (kis + kas).each do |k|
     puts "  <idx:orth value=#{k.split('(').first.inspect}></idx:orth>"
@@ -49,8 +42,17 @@ def to_entry(line)
   end
   puts "</idx:entry>"
 
-  puts "<hr/>"
   #puts "<mbp:pagebreak/>"
+  puts "<hr/>"
+
+rescue => e
+
+  STDERR.puts '=' * 80
+  STDERR.puts "failed to parse: #{line}"
+  STDERR.puts e.inspect
+  STDERR.puts m.inspect
+  STDERR.puts e.backtrace[0, 3]
+  STDERR.puts '-' * 80
 end
 
 while true
