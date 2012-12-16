@@ -3,6 +3,8 @@
 
 The scripts I used to build the edict2 japanese-english dictionary for the Kindle (2012 Paperwhite).
 
+The instructions here are for Mac (SnoLeo). Shouldn't be too different for a GNU/Linux system.
+
 Latest build: http://cipangu.s3.amazonaws.com/edict2.mobi
 
 
@@ -13,6 +15,7 @@ Latest build: http://cipangu.s3.amazonaws.com/edict2.mobi
 * http://www.perrygarvin.com/blog/2012/01/16/how-to-make-an-amazon-kindle-book-using-html-and-css/
 * http://1manfactory.com/create-your-own-kindle-dictionary-for-every-language-for-free/
 * http://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765211
+* http://en.wikipedia.org/wiki/Network_Kanji_Filter
 
 * http://cipangu.s3.amazonaws.com/edict2.mobi
 
@@ -28,6 +31,11 @@ run ```. make.sh```
 
 * Copy the edict2.mobi file to the documents/ directory of your Kindle
 * Set it as primary dictionary for Japanese in your Kindle's settings
+
+
+## notes
+
+The edict2.txt file was generated with ```nkf -J -w edict2 > edict2.txt```
 
 
 ## License
