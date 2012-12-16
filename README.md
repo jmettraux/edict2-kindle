@@ -11,6 +11,7 @@ Latest build: http://cipangu.s3.amazonaws.com/edict2.mobi
 ## links
 
 * http://www.csse.monash.edu.au/~jwb/edict_doc.html
+* http://www.csse.monash.edu.au/~jwb/
 * http://www.mobipocket.com/dev/article.asp?basefolder=prcgen&file=indexing.htm
 * http://www.perrygarvin.com/blog/2012/01/16/how-to-make-an-amazon-kindle-book-using-html-and-css/
 * http://1manfactory.com/create-your-own-kindle-dictionary-for-every-language-for-free/
@@ -38,7 +39,13 @@ run ```. make.sh```
 The edict2.txt file was generated with ```nkf -J -w edict2 > edict2.txt```
 
 
-## License
+## license
 
 Edict2: Copyright (C) 2010 The Electronic Dictionary Research and Development Group.
+
+
+## credits
+
+* Jim Breen and all the edict2 contributors
+* the authors and contributors of NKF
 
