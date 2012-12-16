@@ -16,6 +16,7 @@ puts %{
 }
 
 R = /^([^;\s]+)(?:;([^:\s]+))* \[([^;\s]+)(?:;([^:\s]+))*\] \/(.+)\/$/
+ENTL = /^EntL\d+X?$/
 
 def to_entry(line)
 
@@ -28,7 +29,7 @@ def to_entry(line)
 
   kis = [ m[1], *(m[2] ? m[2].split(';') : []) ]
   kas = [ m[3], *(m[4] ? m[4].split(';') : []) ]
-  gls = m[5].split('/')[0..-2]
+  gls = m[5].split('/').reject { |g| ENTL.match(g) }
 
   label = kis.join(';')
   label += "【#{kas.join(';')}】" if kas.any?
