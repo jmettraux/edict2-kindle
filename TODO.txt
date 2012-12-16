@@ -1,0 +1,4 @@
+
+[ ] enable location navigation
+    (currently can only go to index when "reading" the dictionary itself
+

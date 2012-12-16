@@ -5,7 +5,7 @@ The scripts I used to build the edict2 japanese-english dictionary for the Kindl
 
 The instructions here are for Mac (SnoLeo). Shouldn't be too different for a GNU/Linux system.
 
-Latest build: http://cipangu.s3.amazonaws.com/edict2.mobi
+Latest dictionary build: http://cipangu.s3.amazonaws.com/edict2.mobi
 
 
 ## links
@@ -27,6 +27,8 @@ Make sure you have the kindlegen command line tool available (I placed it in the
 
 run ```. make.sh```
 
+The last step of the automation (copy to the kindle) is commented out.
+
 
 ## using
 
@@ -43,9 +45,12 @@ The edict2.txt file was generated with ```nkf -J -w edict2 > edict2.txt```
 
 Edict2: Copyright (C) 2010 The Electronic Dictionary Research and Development Group.
 
+Those scripts are released under the MIT license, (c) 2012 John Mettraux
+
 
 ## credits
 
 * Jim Breen and all the edict2 contributors
 * the authors and contributors of NKF
+* the mobipocket/OPF contributors / communities
 
