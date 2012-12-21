@@ -55,15 +55,20 @@ rescue => e
   STDERR.puts '-' * 80
 end
 
+count = 0
 while true
   line = STDIN.readline rescue nil
   break unless line
+  count += 1
   to_entry(line)
 end
 
 puts %{
     </mbp:frameset>
   </body>
+
+  <!-- total count: #{count} -->
+
 </html>
 }
 
