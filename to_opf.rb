@@ -1,5 +1,7 @@
 # encoding: UTF-8
 
+raise 'please use Ruby 1.9 or better' if RUBY_VERSION < '1.9'
+
 puts %{
 <?xml version="1.0" encoding="utf-8"?>
 <html xmlns:idx="www.mobipocket.com" xmlns:mbp="www.mobipocket.com" xmlns:xlink="http://www.w3.org/1999/xlink">

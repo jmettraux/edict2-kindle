@@ -25,6 +25,8 @@ Latest dictionary build: http://cipangu.s3.amazonaws.com/edict2.mobi
 
 Make sure you have the kindlegen command line tool available (I placed it in the edict2-kindle directory).
 
+Ruby 1.9 or better is required.
+
 run ```. make.sh```
 
 The last step of the automation (copy to the kindle) is commented out.
