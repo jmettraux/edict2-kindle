@@ -57,6 +57,8 @@ rescue => e
   STDERR.puts '-' * 80
 end
 
+STDIN.set_encoding('UTF-8')
+
 count = 0
 while true
   line = STDIN.readline rescue nil
